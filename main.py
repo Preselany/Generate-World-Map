@@ -16,9 +16,9 @@ with open("countries.json") as f:
         else:
             for polygon in coords:
                 # For some reason some lists are different so I did this, let me know if its stupid
-                if type(polygon[0][0]) == float:
+                if isinstance(polygon[0][0], float):
                     polygons.append([polygon, code])
-                elif type(polygon[0][0][0]) == float:
+                elif isinstance(polygon[0][0][0], float):
                     polygons.append([polygon[0], code])
                 else:
                     print("Error")
